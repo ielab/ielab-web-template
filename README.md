@@ -62,11 +62,6 @@ tags: [publications]
 
 The `layout` variable must be `post`. The `title`, `date` and `author` are displayed when templating the page. Enter content of the post underneath the front matter. The first paragraph of a post is used as an except in templating.
 
-## Pages
+### Pages
 
-If you have a requirement for a page at the top-level of the ielab website, e.g., supplemental content for a paper, project page for code, etc., **this should be a separate repository**. It is [very easy](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/) to set up if you have an existing repository and removes clutter from this repository.
-
-Example:
-
- - Project page: [https://ielab.io/searchrefiner/](https://ielab.io/searchrefiner/)
- - GitHub repo: [https://github.com/ielab/searchrefiner](https://github.com/ielab/searchrefiner)
+If you have a requirement for a page at the top-level of the ielab website, just create a new page similar to `example.md`. The side bar will automatically include this as a top-level page.
