@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<!-- @formatter:off -->
+<div style="width: 120px; height: 120px;">
+    {% if page.image == nil %}
+    <img src="/images/blank-profile-picture.png" style="max-height: 100%; width: 100%; border-radius:50%; object-fit: contain">
+    {% else %}
+    <img src="{{ page.image }}" style="max-height: 100%; width: 100%; border-radius:50%; object-fit: cover">
+    {% endif %}
+</div>
+<h1>{{ page.name }}</h1>
+{% if page.website != nil %}
+<a class="button" href="{{ page.website }}">Personal Website</a>
+{% endif %}
+{% if page.orcid != nil %}
+<a class="button" href="https://orcid.org/{{ page.orcid }}">ORCID</a>
+{% endif %}
+{% if page.scholar != nil %}
+<a class="button" href="{{ page.scholar }}">Google Scholar</a>
+{% endif %}
+{% if page.twitter != nil %}
+<a class="button" href="{{ page.twitter }}">Twitter</a>
+{% endif %}
+{% if page.github != nil %}
+<a class="button" href="{{ page.github }}">GitHub</a>
+{% endif %}
+<p>{{ page.description }}</p>
+
+{% if page.twitter-timeline == true %}
+<div class="flex one five-1000">
+    <div class="four-fifth-1000">{{ content }}</div>
+    <div>
+        <a class="twitter-timeline" href="{{ page.twitter }}"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div>
+{% else %}
+{{ content}}
+{% endif %}

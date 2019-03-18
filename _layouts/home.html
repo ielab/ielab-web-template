@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<h1>{{ site.title }}</h1>
+
+<em>{{ site.description }}</em>
+
+<hr/>
+
+{{ content }}
+
+
+<h2>News</h2>
+
+<div class="flex one three-1000">
+    <div class="two-third-1000">
+        {% for post in site.posts limit:5 %}
+        <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+        <small>{{ post.date | date_to_long_string }}</small>
+        <p>{{ post.excerpt }}</p>
+        {% endfor %}
+    </div>
+    <div>
+        {% if site.twitter %}
+        <a class="twitter-timeline" href="https://twitter.com/{{ site.twitter }}?ref_src=twsrc%5Etfw">Tweets by IELabGroup</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        {% endif %}
+    </div>
+</div>
+
+<h2>People Involved</h2>
+
+<div class="flex one three-500 six-1000">
+    {% for person in site.people %}
+    {% assign path = person.id | split: "/" %}
+    {% assign id = path[2] %}
+    <div>
+        <article class="card">
+            <div style="height: 120px; margin:auto; display:block">
+                {% if person.image == nil %}
+                <img src="/images/blank-profile-picture.png" style="max-height: 100%; width: 100%; object-fit: cover">
+                {% else %}
+                <img src="{{ person.image }}" style="max-height: 100%; width: 100%; object-fit: cover">
+                {% endif %}
+            </div>
+            <footer>
+                <a href="{{ person.url }}">{{ person.name }}</a>
+            </footer>
+        </article>
+    </div>
+    {% endfor %}
+</div>

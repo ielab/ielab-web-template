@@ -1,0 +1,28 @@
+# Shown in the browser and home page.
+title: ielab theme
+description: This is the default theme that can be used in ielab projects.
+logo: /images/blank-profile-picture.png
+
+# Used to configure various links on the site.
+twitter: IELabGroup
+github: ielab
+repository: ielab-web-template
+
+# Configure third-party libraries.
+plugins:
+  - jekyll-feed # RSS feeds.
+  - jekyll-redirect-from # "hot-link" pages.
+
+# Configure non-standard collections.
+collections:
+  people:
+    people: true
+    output: true
+
+# Configure the paths for the non-standard  collections.
+defaults:
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      layout: people
